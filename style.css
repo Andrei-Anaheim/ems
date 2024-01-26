@@ -1,0 +1,566 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: black;
+}
+
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  .topnav li {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    cursor: pointer;
+  }
+  
+  .topnav li:hover {
+    background: linear-gradient(#e66465, #f0f0f7);
+    color: black;
+  }
+  
+  .active {
+    background: linear-gradient(#4CAF50, #82e9ad);
+    color: white;
+    font-weight: bold;
+  }
+  
+  .topnav .icon {
+    display: none;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .topnav li:not(.active) {display: none;}
+    .topnav li.icon {
+      float: right;
+      display: block;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .topnav.responsive {position: relative; z-index: 100;}
+    .topnav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive li {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  }
+
+.auth {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin: 30px auto;
+    color: white;
+}
+
+.login {
+    border: 1px solid green;
+    background-color: grey;
+    color: black;
+    font: normal bold 30px/30px Arial;
+    margin: 10px auto;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.projects, .productivity {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.projects_nav, .productivity_nav, .problem_nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.button {
+    border: 1px red solid;
+    border-radius: 2px;
+    background-color: aquamarine;
+    font: normal normal 20px/20px Arial;
+    padding: 5px;
+    margin: 5px auto;
+    cursor: pointer;
+    text-align: center;
+}
+
+.filter {
+    border: 1px red solid;
+    border-radius: 2px;
+    background-color: rgb(202, 245, 191);
+    font: normal normal 15px/15px Arial;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.filter_selected {
+    background-color: rgb(196, 135, 86);
+}
+
+.projects_main_box , .productivity_box{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 20px auto;
+    width: 100%;
+    border: 1px solid red;
+}
+
+.visits_list, .problem_list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 20px auto;
+    width: 100%;
+    border: 1px solid red;
+}
+
+.text, .select {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.text-small {
+    width: 30%;
+}
+
+.textarea {
+    width: 400px;
+    height: 80px;
+}
+
+.question {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    margin: 25px 15px;
+}
+
+.only_question {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    margin: 10px auto;
+}
+
+.red_status {
+    color:red;
+    text-align: center;
+}
+
+.green_status {
+    color:green;
+    text-align: center;
+}
+
+.white_status {
+    height: 30px;
+    color:white;
+    text-align: center;
+    font: normal normal 20px/20px Arial;
+    padding: 5px;
+}
+
+.pass_result {
+    font: normal bold 20px/20px Arial;
+    color:green;
+    text-align: center;
+}
+
+.list_filters, .list_filters_2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.table_field {
+    display: flex;
+    flex-direction: row; 
+    border: 1px solid yellow;
+    height: 100%;
+    width: 100%;
+    margin: 10px auto;
+}
+
+@media screen and (max-width: 800px) {
+    .table_field {
+        max-height: 100vh;
+        max-width: 100vw;
+        overflow-x: scroll;
+        overflow-y: scroll;  
+    }
+}
+
+.supertable{
+    width: 100%;
+    border: 1px solid red;
+}
+.superrow{
+    height: 5vh;
+}
+
+.superrow_small{
+    height: 4vh;
+}
+
+.ordercell{
+    color: white;
+    font: normal normal 10px/10px Arial;
+    text-align: center;
+    width: 50px;
+    border: 1px solid blueviolet;
+}
+
+.supercell {
+    border: 1px solid green;
+    color: white;
+    font: normal normal 15px/20px Arial;
+    text-align: center;
+    overflow-x: hidden;
+    max-width: 200px;
+    text-overflow: ellipsis;
+    /* white-space: wrap; */
+    white-space: pre-wrap;
+    padding: 2px auto;
+}
+
+.supercell_small {
+    border: 1px solid green;
+    color: white;
+    font: normal normal 12px/15px Arial;
+    text-align: center;
+    overflow-x: hidden;
+    max-width: 200px;
+    text-overflow: ellipsis;
+    white-space: wrap;
+    max-height: 15px;
+    padding: 2px auto;
+}
+
+.map_box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.map_svg {
+    margin: 0 auto;
+    max-width: 70vw;
+    max-height: 80vh;
+}
+
+.map_info {
+    width: 100%; 
+    max-width: 30vw;
+    max-height: 80vh;
+}
+
+.region_name {
+    position: absolute;
+    color:rgb(255, 255, 255);
+    font: italic bold 25px/25px Arial;
+}
+
+
+/*Калькулятор DxH800*/
+.calc_dxh800, .calc_dxh500, .calc_IQ200, .calc_Velocity, .generator, qr_generator {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.calcDxH800_box, .calcDxH500_box, .calcIQ200_box, .calcVelocity_box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.dxh800_buttons, .dxh500_buttons, .IQ200_buttons, .Velocity_buttons, .generator_buttons, .qr_generator_buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.qr_box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.qr_pass_result {
+    position: relative;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    background-color: white;
+    align-items: center;
+    margin: 20px auto;
+    cursor: pointer;
+}
+
+.download {
+    position: absolute;
+    left: 92%;
+    top: 3%;
+    font: normal normal 30px/30px Arial;
+    cursor: pointer;
+    color: red;
+    border-bottom: 4px solid red;
+}
+.download_invisible {
+    position: absolute;
+    left: 92%;
+    top: 3%;
+    font: normal normal 30px/30px Arial;
+    cursor: pointer;
+    color: white;
+    border-bottom: 4px solid white;
+}
+
+.popup{
+    position: fixed;
+    /* display: none; */
+    width: 70vw;
+    height: 80%;
+    background-color: rgba(255,255,255,0.5);
+    top: 10%;
+    left: 0;
+    /* transform: translate(-100%, 0px); */
+}
+
+.opacity_max {
+    background-color: rgba(255,255,255,0);
+}
+
+.popup_body {
+    z-index: 100;
+}
+
+.popup_close {
+    margin: 5px 15px;
+    font: normal bold 30px/30px Arial;
+    text-align: end;
+    z-index: 110;
+}
+
+.region_map {
+    overflow: hidden;
+    margin: 5px auto;
+    width: 100%; 
+    height: 72vh; 
+    max-width: 65vw;
+    z-index: 10;
+}
+
+.mapboxgl-marker {
+    cursor: pointer;
+}
+
+/*Колесо*/
+.wheel_Fortune{
+	margin:0;
+	padding:0;
+	/* background-color: #34495e; */
+	display:flex;
+    flex-direction: column;
+	align-items:center;
+	justify-content: center;
+	height:100vh;
+	overflow:hidden;
+}
+
+.container{
+	width:500px;
+	height:500px;
+	background-color: #ccc;
+	border-radius:50%;
+	border:15px solid #dde;
+	position: relative;
+	overflow: hidden;
+	transition: all 5s ease-out;
+}
+
+.container div{
+	height:50%;
+	width:200px;
+	position: absolute;
+    padding: 10px;
+	clip-path: polygon(100% 0 , 50% 100% , 0 0 );
+	transform:translateX(-50%);
+	transform-origin:bottom;
+	text-align:center;
+	display:flex;
+	align-items:baseline;
+	justify-content: center;
+	font-size: 15px;
+	font-weight:bold;
+	font-family:sans-serif;
+	color:#fff;
+	left:135px;
+}
+
+.container .one{
+	background-color: #3f51b5;
+	left:50%;
+}
+.container .two{
+	background-color: #ff9800;
+	transform: rotate(45deg);
+}
+.container .three{
+	background-color: #e91e63;
+	transform:rotate(90deg);
+}
+.container .four{
+	background-color: #4caf50;
+	transform: rotate(135deg);
+}
+.container .five{
+	background-color: #009688;
+	transform: rotate(180deg);
+}
+.container .six{
+	background-color: #795548;
+	transform: rotate(225deg);
+}
+.container .seven{
+	background-color: #9c27b0;
+	transform: rotate(270deg);
+}
+.container .eight{
+	background-color: #f44336;
+	transform: rotate(315deg);
+}
+
+.wheel_selected {
+    border: 2px solid gold
+}
+
+.arrow{
+	position: absolute;
+	top:10%;
+	left:50%;
+	transform: translateX(-50%);
+	color:#fff;
+    z-index: 98;
+}
+
+.arrow::before{
+	content:"\1F817";
+	font-size:50px;
+}
+
+#spin{
+	position: absolute;
+	top:55%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	z-index:10;
+	background-color: #e2e2e2;
+	text-transform: uppercase;
+	border:8px solid #fff;
+	font-weight:bold;
+	font-size:20px;
+	color:#a2a2a2;
+	width: 80px;
+	height:80px;
+	font-family: sans-serif;
+	border-radius:50%;
+	cursor: pointer;
+	outline:none;
+	letter-spacing: 1px;
+}
+/*Конец колеса*/
+
+.clickable {
+    cursor: pointer;
+}
+
+/* .clickable td{
+    cursor: pointer;
+} */
+
+.icon {
+    margin: 0px 10px;
+}
+
+.disabled {
+    pointer-events: none;
+}
+
+.hide {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .supercell {
+        max-width: 150px;
+        font: normal normal 10px/10px Arial;
+    }
+
+    .hide_column {
+        display:none;
+    }
+
+    .map_svg {
+        margin: 0 auto;
+        max-width: 100vw;
+    }
+
+    .map_info {
+        max-width: 100vw;
+    }
+
+    .popup{
+        width: 100vw;
+    }
+
+    .region_name {
+    font: italic bold 15px/15px Arial;
+}
+}

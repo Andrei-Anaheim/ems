@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>EMS</title>
+</head>
+<body>
+    <div class="topnav disabled" id="myTopnav">
+        <li id="projects_main" class="active">Проекты СПб/ЛО</li>
+        <li id="projects_regions" >Проекты Регионы</li>
+        <li id="maps" >Воронка</li>
+        <li id="exit">Выход</li>
+        <li class="icon" onclick="burgerMenu()">X</li>
+    </div>
+    <div id="auth" class="auth">
+        <p>Введите логин</p>
+        <input type="text" id="user">
+        <p>Введите пароль</p>
+        <input type="password" id="pass">
+        <div class="login" id="login">Войти</div>
+        <p class="red_status" id="negative_response"></p>
+    </div>
+    <!-- Страница выездов -->
+    <div id="projectsMainPage" class="projects hide main">
+        <div class="projects_nav">
+            <div class="button" id="add_project_main">Добавить новый проект</div>
+            <div class="button" id="list_projects_main">Список проектов</div>
+        </div>
+        <div id="project_main_box" class="projects_main_box hide">
+            <div class="question" id="select_application">
+                <p class="text">Выберите специалиста</p>
+            </div>
+            <div class="question" id="select_facility">
+                <p class="text">Выберите учреждение</p>
+            </div>
+            <div class="question" id="select_direction">
+                <p class="text">Выберите направление</p>
+            </div>
+            <div class="question" id="select_instrument">
+                <p class="text">Выберите прибор</p>
+            </div>
+            <div class="question">
+                <p class="text">Выберите тип контракта</p>
+                <select class="select" id="contract_type">
+                    <option></option>
+                    <option>Продажа</option>
+                    <option>Реагентный контракт</option>
+                </select>
+            </div>
+            <div class="question">
+                <p class="text">Номер прибора</p>
+                <input type="number" class="text text-small" value="0" min="0" id="select_number">
+            </div>
+            <div class="question">
+                <p class="text">Этап</p>
+                <select class="select" id="select_stage">
+                    <option></option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                </select>
+            </div>
+            <div class="question">
+                <p class="text">Примечания</p>
+                <textarea class="textarea" id="comment"></textarea>
+            </div>
+            <p class="text hide" id="id_info"></p>
+        </div>
+        <div id="confirm_project_main" class="button hide">Подтвердить ввод проекта</div>
+        <div id="save_edit_project_main" class="button hide">Сохранить изменения</div>
+        <p id="confirmation_status" class="red_status"></p>
+        <div id="projects_main_list" class="visits_list hide">
+            <div class="list_filters" id="list_filters">
+                <div class="question" id="select_application2">
+                    <p class="text">Фильтр по специалистам</p>
+                </div>
+                <div class="question" id="select_facility2">
+                    <p class="text">Фильтр по учреждениям</p>
+                </div>
+                <div class="question" id="select_instrument2">
+                    <p class="text">Фильтр по приборам</p>
+                </div>
+            </div>
+            <div class="list_filters_2" id="list_filters_2">
+                <div class="filter" id="week_filter">Неделя</div>
+                <div class="filter" id="learning_filter">Обучение</div>
+            </div>
+            <div class="table_field" id="table_field"></div>
+        </div>
+    </div>
+    <!-- Конец страницы выездов -->
+    <script src="scriptw.js"></script>
+</body>
+</html>
