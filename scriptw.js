@@ -53,6 +53,15 @@ function checkAuth() {
         current_region[0]="Регионы"
     } 
 }
+document.getElementById('projects_main').addEventListener('click',(e)=>{document.getElementById('add_project_main').classList.remove('disabled');})
+document.getElementById('projects_regions').addEventListener('click',(e)=>{console.log('da');document.getElementById('add_project_main').classList.remove('disabled');})
+// function openProjectsMain() {
+    
+// }
+// function openProjectsRegions() {
+//     console.log('da')
+//     document.getElementById('add_project_main').classList.remove('disabled');
+// }
 
 document.getElementById('exit').addEventListener('click', (e)=>{
     document.getElementById('projectsMainPage').classList.add('hide');
@@ -168,6 +177,7 @@ window.onload = getProjects();
 /*Нажатие на кнопку заведение нового проекта*/
 document.getElementById('add_project_main').addEventListener('click', openAddProjectMainForm);
 function openAddProjectMainForm() {
+    document.getElementById('add_project_main').classList.add('disabled');
     document.getElementById('project_main_box').classList.remove('hide');
     document.getElementById('confirm_project_main').classList.remove('hide');
     document.getElementById('table_field').innerHTML='';
@@ -175,6 +185,7 @@ function openAddProjectMainForm() {
     document.getElementById('save_edit_project_main').classList.add('hide');
     if(document.getElementById('application')) document.getElementById('application').parentNode.removeChild(document.getElementById('application'));
     if(document.getElementById('facility')) document.getElementById('facility').parentNode.removeChild(document.getElementById('facility'));
+    if(document.getElementById('direction')) document.getElementById('direction').parentNode.removeChild(document.getElementById('direction'));
     if(document.getElementById('new_facility')) document.getElementById('new_facility').parentNode.removeChild(document.getElementById('new_facility'));
     if(document.getElementById('new_instrument')) document.getElementById('new_facility').parentNode.removeChild(document.getElementById('new_facility'));
     
@@ -379,7 +390,6 @@ function downloadProjectToDatabase(application, facility, direction, instrument,
 
 function reloadSite(new_facility_status, new_instrument_status) {
     if (xhrstatus[0] == 2**(1 + new_facility_status + new_instrument_status)) {
-        console.log('da');
         window.location.reload(); 
     }
 }
@@ -387,19 +397,20 @@ function reloadSite(new_facility_status, new_instrument_status) {
 function getTasks() {
     const action = "getTasks";
     const url = myApp+"?action="+action
-
-    //подготавливаем и выполняем GET запрос
     let xhr = new XMLHttpRequest();
     xhr.open("GET", url, true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
         	let data = JSON.parse(xhr.response);
-        	// tasksTable (data);
-            console.log(data)
-            
+            console.log(data)   
         }
     };
-    try { xhr.send(); } catch (err) {console.log(err) }
-    
+    try { xhr.send(); } catch (err) {console.log(err)}   
+}
+
+document.getElementById('list_projects_main').addEventListener('click', clickListProjects);
+function clickListProjects() {
+    document.getElementById('project_main_box').classList.add('hide');
+    document.getElementById('projects_main_list').classList.remove('hide');
 }
