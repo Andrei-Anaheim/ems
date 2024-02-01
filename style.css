@@ -216,6 +216,7 @@ body {
     height: 100%;
     width: 100%;
     margin: 10px auto;
+    color: white;
 }
 
 @media screen and (max-width: 800px) {
@@ -233,6 +234,19 @@ body {
 }
 .superrow{
     height: 5vh;
+    border: 1px solid white;
+    text-align: center;
+    font-weight: bold;
+}
+.greenrow {
+    background-color: rgba(76, 175, 80, 0.3);
+}
+.aquamarinerow {
+    background-color: rgba(91, 168, 187, 0.3);
+}
+
+tr, td {
+    border: 1px solid white;
 }
 
 .superrow_small{
@@ -272,7 +286,39 @@ body {
     max-height: 15px;
     padding: 2px auto;
 }
+.triangle {
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    width: 100%;
+}
+.triangle_left {
+    width: 50%;
+    margin: 20px;
+}
+.triangle_right {
+    color: white;
+    font: normal normal 25px/25px Arial;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+}
+.date_row {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.date_row_elements {
+    margin: 5px;
+}
 
+.new_projects_text, .changed_projects_text {
+    font: normal normal 20px/20px Arial 
+}
 .map_box {
     display: flex;
     flex-direction: row;

@@ -11,7 +11,7 @@
     <div class="topnav disabled" id="myTopnav">
         <li id="projects_main" class="active">Проекты СПб/ЛО</li>
         <li id="projects_regions" >Проекты Регионы</li>
-        <li id="maps" >Воронка</li>
+        <li id="voronka" >Воронка</li>
         <li id="exit">Выход</li>
         <li class="icon" onclick="burgerMenu()">X</li>
     </div>
@@ -25,7 +25,7 @@
     </div>
     <!-- Страница выездов -->
     <div id="projectsMainPage" class="projects hide main">
-        <div class="projects_nav">
+        <div class="projects_nav" id="projects_nav">
             <div class="button" id="add_project_main">Добавить новый проект</div>
             <div class="button" id="list_projects_main">Список проектов</div>
         </div>
@@ -80,11 +80,51 @@
                 <div class="question" id="select_application2">
                     <p class="text">Фильтр по менеджерам</p>
                 </div>
-                <div class="question" id="select_facility2">
+                <div class="question" id="select_direction2">
                     <p class="text">Фильтр по направлениям</p>
                 </div>
-                <div class="question" id="select_instrument2">
+                <div class="question">
                     <p class="text">Фильтр по этапам</p>
+                    <select class="select" id="select_stage2">
+                        <option></option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                    </select>
+                </div>
+            </div>
+            <div id="triangle" class="triangle hide">
+                <div id="triangle_left" class="triangle_left">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="svg-triangle" width="600" height="400" class="hide">
+                        <polygon fill="blue" points="0,0 600,0 555,60 45,60" fill="white"/>
+                        <text x="300" y="45" text-anchor="middle" id="stage1" style="font:normal bold 30px/60px Arial"></text> 
+                        <polygon fill="violet" points="51,68 549,68 504,128 96,128" fill="white"/>
+                        <text x="300" y="113" text-anchor="middle" id="stage2" style="font:normal bold 30px/60px Arial"></text> 
+                        <polygon fill="red" points="102,136 498,136 453,196 147,196" fill="white"/>
+                        <text x="300" y="181" text-anchor="middle" id="stage3" style="font:normal bold 30px/60px Arial"></text> 
+                        <polygon fill="yellow" points="153,204 447,204 402,264 198,264" fill="white"/>
+                        <text x="300" y="249" text-anchor="middle" id="stage4" style="font:normal bold 30px/60px Arial"></text> 
+                        <polygon fill="lightgreen" points="204,272 396,272 351,332 249,332" fill="white"/>
+                        <text x="300" y="317" text-anchor="middle" id="stage5" style="font:normal bold 30px/60px Arial"></text> 
+                        <polygon fill="green" points="255,340 345,340 300,400" fill="white"/>
+                        <text x="300" y="375" text-anchor="middle" id="stage6" style="font:normal bold 30px/60px Arial"></text> 
+                    </svg>
+                </div>
+                <div id="triangle_right" class="triangle_right">
+                    <p class="text">Отчет за период</p>
+                    <div class="date_row">
+                        <span class="date_row_elements">c</span>
+                        <input class="date_row_elements" type="date" id="date_row_from">
+                        <span class="date_row_elements">по</span>
+                        <input class="date_row_elements" type="date" id="date_row_to">
+                    </div>
+                    <p class="green_status text" style="margin-top:10px; margin: 0px;" id="new_project_header">Новые проекты</p>
+                    <div id="new_projects"></div>
+                    <p class="text" style="margin-top:10px; margin: 0px; color:aquamarine" id="changed_project_header">Активность по другим проектам</p>
+                    <div id="changed_projects"></div>
                 </div>
             </div>
             <!-- <div class="list_filters_2" id="list_filters_2">
@@ -94,6 +134,7 @@
             <div class="table_field" id="table_field"></div>
         </div>
     </div>
+    
     <!-- Конец страницы выездов -->
     <script src="scriptw.js"></script>
 </body>
